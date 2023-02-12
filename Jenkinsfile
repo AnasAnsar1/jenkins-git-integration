@@ -4,8 +4,8 @@ pipeline {
         pollSCM('* * * * *')
     }
     parameters {
-        choice(name: 'BRANCHES', choices: ['dev', 'master'], description: 'Chose a branch to build on.')
-        string(name: 'GOALS', defaultValue: 'clean install', description: 'clean install is the default goal.')
+        choice(name: 'BRANCHES', choices: ['dev', 'master'], description: 'Choose a branch to build on.')
+        string(name: 'GOALS', defaultValue: 'clean install', description: '-clean install- is the default goal.')
     }
     stages{
         stage('SCM'){
