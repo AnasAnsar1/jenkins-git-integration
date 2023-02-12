@@ -10,9 +10,9 @@ pipeline {
     stages{
         stage('SCM'){
             steps {
-                git branch: "${params.BRANCHES}", url: 'https://github.com/AnasAnsar1/jenkins-git-integration.git'
-                mail subject: "Build started"
-                    body: "Build started on branch $env.BRANCH_NAME & on node $env.NODE_NAME"
+                git branch: "${params.BRANCHES}", url: 'https://github.com/AnasAnsar1/jenkins-git-integration.git',
+                mail subject: "Build started",
+                    body: "Build started on branch $env.BRANCH_NAME & on node $env.NODE_NAME",
                     to: "ansariianas78@gmail.com"
             }
         }
@@ -46,18 +46,18 @@ pipeline {
     }
     post {
         always {
-            mail subject: "Build completed"
-                body: "Build Completed on branch $env.BRANCH_NAME & on node $env.NODE_NAME"
+            mail subject: "Build completed",
+                body: "Build Completed on branch $env.BRANCH_NAME & on node $env.NODE_NAME",
                 to: "ansariianas78@gmail.com"
         }
         failure {
-            mail subject: "Build Failed"
-                body: "Build failed no $env.BUILD_NUMBER with ID $env.BUILD_ID failed on node $env.NODE_NAME"
+            mail subject: "Build Failed",
+                body: "Build failed no $env.BUILD_NUMBER with ID $env.BUILD_ID failed on node $env.NODE_NAME",
                 to: "ansariianas78@gmail.com"
         }
         success {
-            mail subject: "Build Success"
-                body: "Build success no $env.BUILD_NUMBER with ID $env.BUILD_ID failed on node $env.NODE_NAME"
+            mail subject: "Build Success",
+                body: "Build success no $env.BUILD_NUMBER with ID $env.BUILD_ID failed on node $env.NODE_NAME",
                 to: "ansariianas78@gmail.com"
         }
     }
