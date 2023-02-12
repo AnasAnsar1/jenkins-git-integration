@@ -52,12 +52,12 @@ pipeline {
         }
         failure {
             mail subject: "Build Failed",
-                body: "Build failed no $env.BUILD_NUMBER with ID $env.BUILD_ID failed on node $env.NODE_NAME",
+                body: "Build no $env.BUILD_NUMBER failed with ID $env.BUILD_ID on node $env.NODE_NAME",
                 to: "ansariianas78@gmail.com"
         }
         success {
             mail subject: "Build Success",
-                body: "Build success no $env.BUILD_NUMBER with ID $env.BUILD_ID failed on node $env.NODE_NAME",
+                body: "Build no $env.BUILD_NUMBER Success with ID $env.BUILD_ID on node $env.NODE_NAME",
                 to: "ansariianas78@gmail.com"
         }
     }
